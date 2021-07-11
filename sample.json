@@ -1,0 +1,13 @@
+[
+  {
+    "search": "{placeholder}",
+    "replace": "Placeholder",
+    "eval": false
+  },
+  {
+    "search": "{eval}",
+    "replace": "`Template file is ${template}`",
+    "eval": true
+    
+  }
+]
