@@ -1,1 +1,1 @@
-[{ "string": "xyz", "replacer": "abc" }]
+[{ "search": "xyz", "replace": "abc", "eval": false }]

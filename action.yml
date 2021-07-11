@@ -12,7 +12,11 @@ inputs:
     default: "./TEMPLATE.md"
     required: false
   COMMIT_FILE:
-    description: "Path to template file"
+    description: "Path to commit file"
+    default: "./README.md"
+    required: false
+  CUSTOM_REPLACER_FILE:
+    description: "Path to custom replacer file. You can select if you want to use eval or not!"
     default: "./README.md"
     required: false
 

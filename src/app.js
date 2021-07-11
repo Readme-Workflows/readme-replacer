@@ -9,8 +9,8 @@ Toolkit.run(async (tools) => {
   let templateContent;
 
   try {
-    templateContent = fs.readFileSync(TEMPLATE_FILE, "utf-8").split("\n");
+    templateContent = fs.readFileSync(TEMPLATE_FILE, "utf-8");
   } catch (err) {
-    return tools.exit.failure(`Couldn't find the file named ${readme_file}`);
+    return tools.exit.failure(`Couldn't find the file named ${TEMPLATE_FILE}`);
   }
 });
