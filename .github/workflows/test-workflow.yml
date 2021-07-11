@@ -21,4 +21,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          CUSTOM_REPLACER_FILE: "sample.yml"
+          CUSTOM_REPLACER_FILE: "sample.json"
