@@ -19,6 +19,14 @@ inputs:
     description: "Path to custom replacer file (JSON). You can select if you want to use eval or not!"
     default: "./.github/customReplacer.json"
     required: false
+  DATE_FORMAT:
+    description: "Format of the date/time (if date replacer used)"
+    default: "dddd, mmmm dS, yyyy, h:MM:ss TT"
+    required: false
+  TIMEZONE:
+    description: "Desired timezone of the date (can be locale based of GMT offset)"
+    default: "0"
+    required: false
   COMMIT_MESSAGE:
     description: "Message used for committing changes"
     default: "⚡ Update README by replacing keywords"

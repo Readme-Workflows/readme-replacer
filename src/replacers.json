@@ -1,1 +1,7 @@
-[{ "search": "{test}", "replace": "done", "eval": false }]
+[
+  {
+    "search": "{replace: DATE}",
+    "replace": "TIMEZONE",
+    "eval": true
+  }
+]

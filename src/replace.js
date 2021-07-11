@@ -1,9 +1,10 @@
 /**
  * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
  */
+/* eslint-disable no-unused-vars */
 const fs = require("fs");
 
-const { CUSTOM_REPLACER_FILE } = require("./config");
+const { CUSTOM_REPLACER_FILE, TIMEZONE } = require("./config");
 const customReplacer = require("./customReplacer");
 const replacers = require("./replacers.json");
 
@@ -25,17 +26,6 @@ module.exports = (templateContent) => {
       str: "CUSTOM_REPLACER_FILE needs to be a json",
     };
   }
-
-  // try {
-  //   customData = require(CUSTOM_REPLACER_FILE);
-  // } catch (e) {
-  //   console.log(e);
-  //   return {
-  //     result: true,
-  //     str: templateContent,
-  //   };
-  // }
-  // console.log(customData);
 
   try {
     customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");

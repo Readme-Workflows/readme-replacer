@@ -3,6 +3,8 @@
  */
 const core = require("@actions/core");
 
+const getDate = require("./getDate");
+
 const GH_USERNAME = core.getInput("CONFIG_FILE");
 const TEMPLATE_FILE = core.getInput("TEMPLATE_FILE");
 const COMMIT_FILE = core.getInput("COMMIT_FILE");
@@ -10,6 +12,11 @@ const CUSTOM_REPLACER_FILE = core.getInput("CUSTOM_REPLACER_FILE");
 const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
 const COMMIT_EMAIL = core.getInput("COMMIT_EMAIL");
 const COMMIT_NAME = core.getInput("COMMIT_NAME");
+
+const TIMEZONE = getDate(
+  core.getInput("DATE_FORMAT"),
+  core.getInput("TIMEZONE")
+);
 
 module.exports = {
   GH_USERNAME,
@@ -19,4 +26,5 @@ module.exports = {
   COMMIT_MESSAGE,
   COMMIT_EMAIL,
   COMMIT_NAME,
+  TIMEZONE,
 };
