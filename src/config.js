@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const core = require("@actions/core");
 
 const GH_USERNAME = core.getInput("CONFIG_FILE");
