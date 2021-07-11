@@ -1,1 +1,1 @@
-[{ "search": "test", "replace": "done", "eval": false }]
+[{ "search": "{test}", "replace": "done", "eval": false }]
