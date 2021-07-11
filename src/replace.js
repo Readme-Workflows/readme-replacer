@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 const { CUSTOM_REPLACER_FILE } = require("./config");
 const customReplacer = require("./customReplacer");
 const replacers = require("./replacers.json");
@@ -21,34 +23,34 @@ module.exports = (templateContent) => {
     };
   }
 
-  try {
-    customData = require(CUSTOM_REPLACER_FILE);
-  } catch (e) {
-    console.log(e);
-    return {
-      result: true,
-      str: templateContent,
-    };
-  }
-  console.log(customData);
-
   // try {
-  //   customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
-  // } catch (err) {
+  //   customData = require(CUSTOM_REPLACER_FILE);
+  // } catch (e) {
+  //   console.log(e);
   //   return {
   //     result: true,
   //     str: templateContent,
   //   };
   // }
+  // console.log(customData);
 
-  // try {
-  //   customData = JSON.parse(customData);
-  // } catch (e) {
-  //   return {
-  //     result: false,
-  //     str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
-  //   };
-  // }
+  try {
+    customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
+  } catch (err) {
+    return {
+      result: true,
+      str: templateContent,
+    };
+  }
+
+  try {
+    customData = JSON.parse(customData);
+  } catch (e) {
+    return {
+      result: false,
+      str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
+    };
+  }
 
   if (customData.forEach) {
     customData.forEach((data) => {
