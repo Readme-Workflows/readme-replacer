@@ -21519,11 +21519,12 @@ module.exports = {
 /***/ 9239:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+// eslint-disable-next-line no-unused-vars
+const { TIMEZONE } = __nccwpck_require__(4570);
+
 /**
  * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
  */
-// eslint-disable-next-line no-unused-vars
-const { TIMEZONE } = __nccwpck_require__(4570);
 
 /**
  *
