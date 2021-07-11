@@ -6,7 +6,7 @@
   "scripts": {
     "format:check": "prettier --check src/**/*.js",
     "format": "prettier --write src/**/*.js",
-    "build": "ncc build src/index.js --license LICENSE"
+    "build": "ncc build src/app.js --license LICENSE"
   },
   "dependencies": {
     "@actions/core": "^1.4.0",
