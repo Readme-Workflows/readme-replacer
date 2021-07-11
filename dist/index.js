@@ -21503,12 +21503,11 @@ const { inspect } = __nccwpck_require__(1669);
 module.exports = (template, replaceData) => {
   if (replaceData.search && replaceData.replace) {
     if (!replaceData.eval || replaceData.replace.length <= 50) {
-      let replace = replaceData?.eval ? eval(replaceData.replace) : replaceData.replace;
-      if (typeof replace !== "string")
-        replace = inspect(replace, {depth:0});
-      template = template
-        .split(replaceData.search)
-        .join(replace);
+      let replace = replaceData?.eval
+        ? eval(replaceData.replace)
+        : replaceData.replace;
+      if (typeof replace !== "string") replace = inspect(replace, { depth: 0 });
+      template = template.split(replaceData.search).join(replace);
     } else {
       return {
         result: false,
@@ -21891,6 +21890,9 @@ module.exports = require("zlib");;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const fs = __nccwpck_require__(5747);
 const { Toolkit } = __nccwpck_require__(7045);
 
