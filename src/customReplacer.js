@@ -16,7 +16,7 @@ module.exports = (template, replaceData) => {
       template = template
         .split(replaceData.search)
         .join(
-          replaceData?.eval ? eval(replaceData.replace) : replaceData.replace
+          replaceData.eval ? eval(replaceData.replace) : replaceData.replace
         );
     } else {
       return {
