@@ -13,7 +13,11 @@ const { TIMEZONE } = require("./config");
 module.exports = (template, replaceData) => {
   if (replaceData.search && replaceData.replace) {
     if (!replaceData.eval || replaceData.replace.length <= 50) {
-      template = template.split(replaceData.search).join(replaceData?.eval ? eval(replaceData.replace) : replaceData.replace);
+      template = template
+        .split(replaceData.search)
+        .join(
+          replaceData?.eval ? eval(replaceData.replace) : replaceData.replace
+        );
     } else {
       return {
         result: false,
