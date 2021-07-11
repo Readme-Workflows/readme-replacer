@@ -5,7 +5,7 @@ const core = require("@actions/core");
 
 const getDate = require("./getDate");
 
-const GH_USERNAME = core.getInput("CONFIG_FILE");
+const GH_USERNAME = core.getInput("GH_USERNAME");
 const TEMPLATE_FILE = core.getInput("TEMPLATE_FILE");
 const COMMIT_FILE = core.getInput("COMMIT_FILE");
 const CUSTOM_REPLACER_FILE = core.getInput("CUSTOM_REPLACER_FILE");
