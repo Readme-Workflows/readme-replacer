@@ -24,11 +24,13 @@ module.exports = (templateContent) => {
   try {
     customData = require(CUSTOM_REPLACER_FILE);
   } catch (e) {
+    console.log(e);
     return {
       result: true,
       str: templateContent,
     };
   }
+  console.log(customData);
 
   // try {
   //   customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
