@@ -19,7 +19,7 @@ module.exports = (template, replaceData) => {
     }
   }
   return {
-    result: false,
+    result: true,
     str: template,
   };
 };
