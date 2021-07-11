@@ -21694,7 +21694,7 @@ module.exports = JSON.parse('{"name":"signale","version":"1.4.0","description":"
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('[{"search":"xyz","replace":"abc","eval":false}]');
+module.exports = JSON.parse('[{"search":"test","replace":"done","eval":false}]');
 
 /***/ }),
 
