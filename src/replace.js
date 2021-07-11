@@ -6,11 +6,11 @@ const customReplacer = require("./customReplacer");
 const replacers = require("./replacers.json");
 
 /**
- * @param {string} templateContent Template file content
+ * @param {string} template Template file content
  */
-module.exports = (templateContent) => {
+module.exports = (template) => {
   replacers.forEach((item) => {
-    templateContent = templateContent
+    template = template
       .split(item.search)
       .join(item.eval ? eval(item.replace) : item.replace);
   });
@@ -29,7 +29,7 @@ module.exports = (templateContent) => {
   } catch (err) {
     return {
       result: true,
-      str: templateContent,
+      str: template,
     };
   }
 
@@ -44,21 +44,21 @@ module.exports = (templateContent) => {
 
   if (customData.forEach) {
     customData.forEach((data) => {
-      let tempReplace = customReplacer(templateContent, data);
+      let tempReplace = customReplacer(template, data);
       if (tempReplace.result) {
-        templateContent = tempReplace.str;
+        template = tempReplace.str;
       } else {
         return tempReplace;
       }
     });
   } else {
-    let tempReplace = customReplacer(templateContent, customData);
+    let tempReplace = customReplacer(template, customData);
     if (tempReplace.result) {
-      templateContent = tempReplace.str;
+      template = tempReplace.str;
     } else {
       return tempReplace;
     }
   }
 
-  return { result: true, str: templateContent };
+  return { result: true, str: template };
 };
