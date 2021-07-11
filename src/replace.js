@@ -1,8 +1,9 @@
 const { CUSTOM_REPLACER_FILE } = require("./config");
+const customReplacer = require("./customReplacer");
 const replacers = require("./replacers.json");
 
 /**
- * @param {string} templateContent - Template file
+ * @param {string} templateContent Template file content
  */
 module.exports = (templateContent) => {
   replacers.forEach((item) => {
@@ -11,41 +12,57 @@ module.exports = (templateContent) => {
       .join(item.eval ? eval(item.replace) : item.replace);
   });
 
-  let customReplacer;
+  let customData;
 
-  try {
-    customReplacer = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
-  } catch (err) {
+  if (!CUSTOM_REPLACER_FILE.toLocaleLowerCase().endsWith(".json")) {
     return {
       result: false,
-      str: `Couldn't find the file named ${CUSTOM_REPLACER_FILE}`,
+      str: "CUSTOM_REPLACER_FILE needs to be a json",
     };
   }
 
   try {
-    customReplacer = JSON.parse(customReplacer);
+    customData = require(CUSTOM_REPLACER_FILE);
   } catch (e) {
     return {
-      result: false,
-      str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
+      result: true,
+      str: templateContent,
     };
   }
 
-  if (customReplacer.forEach) {
-  } else if (customReplacer.search && customReplacer.replace) {
-    if (!customReplacer.eval || customReplacer.replace.length <= 50) {
-      templateContent = templateContent
-        .split(customReplacer.search)
-        .join(
-          customReplacer.eval
-            ? eval(customReplacer.replace)
-            : customReplacer.replace
-        );
+  // try {
+  //   customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
+  // } catch (err) {
+  //   return {
+  //     result: true,
+  //     str: templateContent,
+  //   };
+  // }
+
+  // try {
+  //   customData = JSON.parse(customData);
+  // } catch (e) {
+  //   return {
+  //     result: false,
+  //     str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
+  //   };
+  // }
+
+  if (customData.forEach) {
+    customData.forEach((data) => {
+      let tempReplace = customReplacer(templateContent, data);
+      if (tempReplace.result) {
+        templateContent = tempReplace.str;
+      } else {
+        return tempReplace;
+      }
+    });
+  } else {
+    let tempReplace = customReplacer(templateContent, customData);
+    if (tempReplace.result) {
+      templateContent = tempReplace.str;
     } else {
-      return {
-        result: false,
-        str: `Replacer length cannot be more than 50`,
-      };
+      return tempReplace;
     }
   }
 

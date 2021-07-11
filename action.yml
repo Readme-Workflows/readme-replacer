@@ -16,8 +16,8 @@ inputs:
     default: "./README.md"
     required: false
   CUSTOM_REPLACER_FILE:
-    description: "Path to custom replacer file. You can select if you want to use eval or not!"
-    default: "./README.md"
+    description: "Path to custom replacer file (JSON). You can select if you want to use eval or not!"
+    default: "./.github/customReplacer.json"
     required: false
 
 branding:
