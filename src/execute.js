@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const { spawn } = require("child_process");
 
 const apiRequest = require("./apiRequest");
