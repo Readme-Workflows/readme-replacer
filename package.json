@@ -13,6 +13,7 @@
     "@octokit/core": "^2.5.4",
     "actions-toolkit": "^6.0.1",
     "axios": "^0.21.1",
+    "dateformat": "^4.5.1",
     "qs": "^6.10.1"
   },
   "devDependencies": {
