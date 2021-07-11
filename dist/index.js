@@ -21515,7 +21515,7 @@ module.exports = (template, replaceData) => {
     }
   }
   return {
-    result: false,
+    result: true,
     str: template,
   };
 };
@@ -21916,7 +21916,6 @@ Toolkit.run(async (tools) => {
       return tools.exit.failure(e);
     }
   } else {
-    console.log("\n" + replaceContent + "\n");
     return tools.exit.failure(replaceContent.str);
   }
 });
