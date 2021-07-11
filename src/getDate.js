@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const dateFormat = require("dateformat");
 
 module.exports = (format, timezone) => {
