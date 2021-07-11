@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+const { TIMEZONE } = require("./config");
+
 /**
  *
  * @param {string} template Template file content
