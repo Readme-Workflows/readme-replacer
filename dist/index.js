@@ -21489,7 +21489,7 @@ const core = __nccwpck_require__(2186);
 
 const getDate = __nccwpck_require__(1650);
 
-const GH_USERNAME = core.getInput("CONFIG_FILE");
+const GH_USERNAME = core.getInput("GH_USERNAME");
 const TEMPLATE_FILE = core.getInput("TEMPLATE_FILE");
 const COMMIT_FILE = core.getInput("COMMIT_FILE");
 const CUSTOM_REPLACER_FILE = core.getInput("CUSTOM_REPLACER_FILE");
