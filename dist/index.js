@@ -21661,6 +21661,9 @@ module.exports = (format, timezone) => {
 /***/ 760:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 /* eslint-disable no-unused-vars */
 const fs = __nccwpck_require__(5747);
 
