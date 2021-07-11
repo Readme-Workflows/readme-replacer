@@ -21625,6 +21625,9 @@ module.exports = exec;
 /***/ 1650:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const dateFormat = __nccwpck_require__(1512);
 
 module.exports = (format, timezone) => {
