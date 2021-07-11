@@ -21916,6 +21916,7 @@ Toolkit.run(async (tools) => {
       return tools.exit.failure(e);
     }
   } else {
+    console.log("\n" + replaceContent + "\n");
     return tools.exit.failure(replaceContent.str);
   }
 });
