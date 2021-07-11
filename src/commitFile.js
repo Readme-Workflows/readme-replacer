@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const { COMMIT_EMAIL, COMMIT_NAME, COMMIT_MESSAGE } = require("./config");
 const exec = require("./execute");
 
