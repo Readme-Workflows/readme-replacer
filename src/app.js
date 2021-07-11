@@ -3,6 +3,7 @@ const { Toolkit } = require("actions-toolkit");
 
 const { TEMPLATE_FILE, COMMIT_FILE } = require("./config");
 const replace = require("./replace");
+const commitFile = require("./commitFile");
 
 Toolkit.run(async (tools) => {
   tools.log.debug(`Starting process...`);
@@ -19,6 +20,7 @@ Toolkit.run(async (tools) => {
   if (replaceContent.result) {
     try {
       fs.writeFileSync(COMMIT_FILE, replaceContent.str);
+      await commitFile();
     } catch (e) {
       return tools.exit.failure(e);
     }

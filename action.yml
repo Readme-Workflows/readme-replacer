@@ -19,6 +19,18 @@ inputs:
     description: "Path to custom replacer file (JSON). You can select if you want to use eval or not!"
     default: "./.github/customReplacer.json"
     required: false
+  COMMIT_MESSAGE:
+    description: "Message used for committing changes"
+    default: "⚡ Update README by replacing keywords"
+    required: false
+  COMMIT_EMAIL:
+    description: "Email used for committing changes"
+    default: "41898282+github-actions[bot]@users.noreply.github.com"
+    required: false
+  COMMIT_NAME:
+    description: "Name used for committing changes"
+    default: "replacer-bot"
+    required: false
 
 branding:
   color: orange
