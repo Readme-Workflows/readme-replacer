@@ -1,0 +1,25 @@
+name: Readme Replacer - Profile Readme
+description: Auto replace content from template file!
+author: abhijoshi2k, PuneetGopinath, Andre601
+
+inputs:
+  GH_USERNAME:
+    description: "Your GitHub username"
+    default: ${{ github.repository_owner }}
+    required: false
+  TEMPLATE_FILE:
+    description: "Path to template file"
+    default: "./TEMPLATE.md"
+    required: false
+  COMMIT_FILE:
+    description: "Path to template file"
+    default: "./README.md"
+    required: false
+
+branding:
+  color: orange
+  icon: activity
+
+runs:
+  using: node12
+  main: dist/index.js
