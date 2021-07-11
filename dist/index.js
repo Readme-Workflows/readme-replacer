@@ -21570,9 +21570,9 @@ let reqParams = {
   username: GH_USERNAME,
   commit_name: COMMIT_NAME,
   commit_email: COMMIT_EMAIL,
-  key: "RECENT_ACTIVITY_URL",
-  params: "RECENT_ACTIVITY_PARAMS",
-  passkey: "RECENT_ACTIVITY_PASSKEY",
+  key: "README_REPLACER_URL",
+  params: "README_REPLACER_PARAMS",
+  passkey: "README_REPLACER_PASSKEY",
 };
 
 /**
