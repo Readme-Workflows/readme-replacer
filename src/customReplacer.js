@@ -7,12 +7,11 @@ const { inspect } = require("util");
 module.exports = (template, replaceData) => {
   if (replaceData.search && replaceData.replace) {
     if (!replaceData.eval || replaceData.replace.length <= 50) {
-      let replace = replaceData?.eval ? eval(replaceData.replace) : replaceData.replace;
-      if (typeof replace !== "string")
-        replace = inspect(replace, {depth:0});
-      template = template
-        .split(replaceData.search)
-        .join(replace);
+      let replace = replaceData?.eval
+        ? eval(replaceData.replace)
+        : replaceData.replace;
+      if (typeof replace !== "string") replace = inspect(replace, { depth: 0 });
+      template = template.split(replaceData.search).join(replace);
     } else {
       return {
         result: false,
