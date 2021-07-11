@@ -21592,6 +21592,8 @@ module.exports = exec;
 /***/ 760:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+const fs = __nccwpck_require__(5747);
+
 const { CUSTOM_REPLACER_FILE } = __nccwpck_require__(4570);
 const customReplacer = __nccwpck_require__(9239);
 const replacers = __nccwpck_require__(3656);
@@ -21615,34 +21617,34 @@ module.exports = (templateContent) => {
     };
   }
 
-  try {
-    customData = require(CUSTOM_REPLACER_FILE);
-  } catch (e) {
-    console.log(e);
-    return {
-      result: true,
-      str: templateContent,
-    };
-  }
-  console.log(customData);
-
   // try {
-  //   customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
-  // } catch (err) {
+  //   customData = require(CUSTOM_REPLACER_FILE);
+  // } catch (e) {
+  //   console.log(e);
   //   return {
   //     result: true,
   //     str: templateContent,
   //   };
   // }
+  // console.log(customData);
 
-  // try {
-  //   customData = JSON.parse(customData);
-  // } catch (e) {
-  //   return {
-  //     result: false,
-  //     str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
-  //   };
-  // }
+  try {
+    customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
+  } catch (err) {
+    return {
+      result: true,
+      str: templateContent,
+    };
+  }
+
+  try {
+    customData = JSON.parse(customData);
+  } catch (e) {
+    return {
+      result: false,
+      str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
+    };
+  }
 
   if (customData.forEach) {
     customData.forEach((data) => {
