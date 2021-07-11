@@ -21420,6 +21420,9 @@ function wrappy (fn, cb) {
 /***/ 5183:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const axios = __nccwpck_require__(6545);
 const qs = __nccwpck_require__(2760);
 
@@ -21443,6 +21446,9 @@ module.exports = async (params, promiseStatus) => {
 /***/ 7692:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const { COMMIT_EMAIL, COMMIT_NAME, COMMIT_MESSAGE } = __nccwpck_require__(4570);
 const exec = __nccwpck_require__(9021);
 
@@ -21468,6 +21474,9 @@ module.exports = commitFile;
 /***/ 4570:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const core = __nccwpck_require__(2186);
 
 const GH_USERNAME = core.getInput("CONFIG_FILE");
@@ -21493,6 +21502,10 @@ module.exports = {
 
 /***/ 9239:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 
 /**
  *
@@ -21527,6 +21540,9 @@ module.exports = (template, replaceData) => {
 /***/ 9021:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const { spawn } = __nccwpck_require__(3129);
 
 const apiRequest = __nccwpck_require__(5183);
