@@ -1,25 +1,39 @@
 {
-  "name": "readme-replacer",
-  "version": "1.0.0",
-  "description": "Replace data from template repository with dynamic data",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Readme-Workflows/readme-replacer.git"
-  },
-  "keywords": [
-    "github",
-    "profile",
-    "readme",
-    "replacer"
-  ],
-  "author": "Readme Workflows Team",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Readme-Workflows/readme-replacer/issues"
-  },
-  "homepage": "https://github.com/Readme-Workflows/readme-replacer#readme"
+	"name": "readme-replacer",
+	"version": "1.0.0",
+	"description": "Replace data from template repository with dynamic data",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@actions/core": "^1.4.0",
+		"@octokit/core": "^2.5.4",
+		"actions-toolkit": "^6.0.1",
+		"axios": "^0.21.1",
+		"qs": "^6.10.1"
+	},
+	"devDependencies": {
+		"@vercel/ncc": "^0.28.6",
+		"eslint": "^7.30.0",
+		"eslint-config-prettier": "^8.3.0",
+		"nodemon": "^2.0.10",
+		"prettier": "^2.3.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Readme-Workflows/readme-replacer.git"
+	},
+	"keywords": [
+		"github",
+		"profile",
+		"readme",
+		"replacer"
+	],
+	"author": "Readme Workflows Team",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Readme-Workflows/readme-replacer/issues"
+	},
+	"homepage": "https://github.com/Readme-Workflows/readme-replacer#readme"
 }
