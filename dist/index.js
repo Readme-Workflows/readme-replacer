@@ -21428,6 +21428,9 @@ function wrappy (fn, cb) {
 /***/ 5183:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const axios = __nccwpck_require__(6545);
 const qs = __nccwpck_require__(2760);
 
@@ -21451,6 +21454,9 @@ module.exports = async (params, promiseStatus) => {
 /***/ 7692:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const { COMMIT_EMAIL, COMMIT_NAME, COMMIT_MESSAGE } = __nccwpck_require__(4570);
 const exec = __nccwpck_require__(9021);
 
@@ -21476,6 +21482,9 @@ module.exports = commitFile;
 /***/ 4570:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const core = __nccwpck_require__(2186);
 
 const getDate = __nccwpck_require__(1650);
@@ -21514,6 +21523,10 @@ module.exports = {
 const { TIMEZONE } = __nccwpck_require__(4570);
 
 /**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
+
+/**
  *
  * @param {string} template Template file content
  * @param {object} replace Replace config
@@ -21545,6 +21558,9 @@ module.exports = (template, replaceData) => {
 /***/ 9021:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const { spawn } = __nccwpck_require__(3129);
 
 const apiRequest = __nccwpck_require__(5183);
@@ -21611,6 +21627,9 @@ module.exports = exec;
 /***/ 1650:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const dateFormat = __nccwpck_require__(1512);
 
 module.exports = (format, timezone) => {
@@ -21647,6 +21666,9 @@ module.exports = (format, timezone) => {
 /***/ 760:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 /* eslint-disable no-unused-vars */
 const fs = __nccwpck_require__(5747);
 
@@ -21934,6 +21956,9 @@ module.exports = require("zlib");;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const fs = __nccwpck_require__(5747);
 const { Toolkit } = __nccwpck_require__(7045);
 

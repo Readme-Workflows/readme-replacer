@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 /* eslint-disable no-unused-vars */
 const fs = require("fs");
 

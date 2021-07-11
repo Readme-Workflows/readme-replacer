@@ -2,6 +2,10 @@
 const { TIMEZONE } = require("./config");
 
 /**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
+
+/**
  *
  * @param {string} template Template file content
  * @param {object} replace Replace config

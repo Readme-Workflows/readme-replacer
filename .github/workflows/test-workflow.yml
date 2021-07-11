@@ -1,0 +1,24 @@
+name: Test our workflow
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "build/*.js"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Replace placeholders and update README
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Add activity to readme
+        uses: Readme-Workflows/readme-replacer@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          CUSTOM_REPLACER_FILE: "sample.json"

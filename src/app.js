@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
+ */
 const fs = require("fs");
 const { Toolkit } = require("actions-toolkit");
 
