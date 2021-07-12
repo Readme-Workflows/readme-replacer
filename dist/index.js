@@ -21680,13 +21680,8 @@ const replacers = __nccwpck_require__(3656);
  * @param {string} template Template file content
  */
 module.exports = (template) => {
-  replacers.forEach((item) => {
-    template = template
-      .split(item.search)
-      .join(item.eval ? eval(item.replace) : item.replace);
-  });
-
   let customData;
+  let customDataExists = true;
 
   if (!CUSTOM_REPLACER_FILE.toLocaleLowerCase().endsWith(".json")) {
     return {
@@ -21698,10 +21693,7 @@ module.exports = (template) => {
   try {
     customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
   } catch (err) {
-    return {
-      result: true,
-      str: template,
-    };
+    customDataExists = false;
   }
 
   try {
@@ -21713,7 +21705,7 @@ module.exports = (template) => {
     };
   }
 
-  if (customData.forEach) {
+  if (customData.forEach && customDataExists) {
     customData.forEach((data) => {
       let tempReplace = customReplacer(template, data);
       if (tempReplace.result) {
@@ -21722,7 +21714,7 @@ module.exports = (template) => {
         return tempReplace;
       }
     });
-  } else {
+  } else if (customDataExists) {
     let tempReplace = customReplacer(template, customData);
     if (tempReplace.result) {
       template = tempReplace.str;
@@ -21731,7 +21723,13 @@ module.exports = (template) => {
     }
   }
 
-  return { result: true, str: template };
+  replacers.forEach((item) => {
+    template = template
+      .split(item.search)
+      .join(item.eval ? eval(item.replace) : item.replace);
+  });
+
+  return { result: true, str: template, customDataExists: customDataExists };
 };
 
 
