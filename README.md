@@ -1,4 +1,4 @@
-[example]: https://github.com/Readme-Workflows/readme-replacer/blob/main/src/replacers.json
+[default]: https://github.com/Readme-Workflows/readme-replacer/blob/main/src/replacers.json
 [discord]: https://discord.gg/2a9VC4AK6x
 
 # Readme-Replacer
@@ -68,7 +68,7 @@ Here is a quick rundown of the different options:
 - `replace` is the value that the `search` value should be replaced with. In our example above would any appearance of `{foo}` be replaced with `Bar`.
 - `eval` is a boolean to set whether the `replace` value should be evaluated by the Action for further manipulation. It essentially allows you to set Javascript code that would be executed when the Action runs (i.e. `new Date().toLocaleString()` would be executed as Javascript code and the result used as replacement for the search string).
 
-You can find an [Example JSON file][example] with some recommended placeholders in this Repository.
+You can find a [JSON file][default] which would be the default placeholders in the workflow in this repository.
 
 ## Links
 
