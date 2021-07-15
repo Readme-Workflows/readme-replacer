@@ -10,22 +10,42 @@ The Action is designed to be as flexible as possible and to work with ther Actio
 
 To Set up the Action, first create a new workflow file and populate it with the following values:  
 ```yaml
-# TODO: Add Workflow setup
+name: Replace placeholders
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # Activate every 30 minutes
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    name: Replace Placeholders in File.
+    
+    steps:
+      - uses: actions/checkout@2.3.4
+      # Please replace {version} with the latest available release.
+      - uses: Readme-Workflows/readme-replacer@{version}
+        with:
+          # Those are all default values and only are shown for demonstration
+          TEMPLATE_FILE: './TEMPLATE.md'
+          COMMIT_FILE: './README.md'
+          CUSTOM_REPLACER_FILE: './.github/customReplacer.json'
 ```
 
 ### Options
 
-| Option | Function | Default |
-| ------ | -------- | ------- |
-| `GH_USERNAME`          | Name of the user used.                                                                             | `Repository Owner`                       |
-| `TEMPLATE_FILE`        | The template MD file to get content from.                                                          | `./TEMPLATE.md`                          |
-| `COMMIT_FILE`          | The target MD file to update with the template.                                                    | `./README.md`                            |
-| `CUSTOM_REPLACER_FILE` | JSON file that contains the placeholders and their replacements.                                   | `./.github/customReplacer.json`          |
-| `DATE_FORMAT`          | Format used to display the date in.                                                                | `dddd, mmmm, dS, yyyy, h:MM:ss TT`       |
-| `TIMEZONE`             | Timezone to use for the date fomatting. Can be a relative GMT-time (i.e. `+2:00`) or Locale-based. | `0`                                      |
-| `COMMIT_MESSAGE`       | Message to use for the commit.                                                                     | `⚡ Update README by replacing keywords` |
+| Option                 | Function                                                                                           | Default                                                 |
+| ---------------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| `GH_USERNAME`          | Name of the user used.                                                                             | `Repository Owner`                                      |
+| `TEMPLATE_FILE`        | The template MD file to get content from.                                                          | `./TEMPLATE.md`                                         |
+| `COMMIT_FILE`          | The target MD file to update with the template.                                                    | `./README.md`                                           |
+| `CUSTOM_REPLACER_FILE` | JSON file that contains the placeholders and their replacements.                                   | `./.github/customReplacer.json`                         |
+| `DATE_FORMAT`          | Format used to display the date in.                                                                | `dddd, mmmm, dS, yyyy, h:MM:ss TT`                      |
+| `TIMEZONE`             | Timezone to use for the date fomatting. Can be a relative GMT-time (i.e. `+2:00`) or Locale-based. | `0`                                                     |
+| `COMMIT_MESSAGE`       | Message to use for the commit.                                                                     | `⚡ Update README by replacing keywords`                |
 | `COMMIT_EMAIL`         | E-Mail used for the Committer.                                                                     | `41898282+github-actions[bot]@users.noreply.github.com` |
-| `COMMIT_NAME`          | Name used for the Committer.                                                                       | `replacer-bot` |
+| `COMMIT_NAME`          | Name used for the Committer.                                                                       | `replacer-bot`                                          |
 
 ### Replacer JSON file
 
