@@ -4,7 +4,7 @@
 # Readme-Replacer
 
 Readme-Replacer is a GitHub Action that allows you define your own collections of placeholder text to replace with specific values.  
-The Action is designed to be as flexible as possible and to work with ther Actions.
+The Action is designed to be as flexible as possible and to work with other Actions.
 
 ## Setup
 
