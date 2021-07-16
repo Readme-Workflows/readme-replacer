@@ -10,7 +10,7 @@ jobs:
     name: Replace Placeholders in File.
 
     steps:
-      - uses: actions/checkout@2.3.4
+      - uses: actions/checkout@v2
       - uses: Readme-Workflows/readme-replacer@main
         with:
           TEMPLATE_FILE: "./README.md"

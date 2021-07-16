@@ -1,7 +1,7 @@
 [
   {
     "search": "{version}",
-    "replace": "'v'+require(./package.json).version",
+    "replace": "'v'+require('../package.json').version",
     "eval": true
   }
 ]
