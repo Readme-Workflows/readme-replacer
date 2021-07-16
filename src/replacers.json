@@ -1,7 +1,8 @@
 [
   {
+    "comment": "Adds date and time in format specified in DATE_FORMAT input in YAML",
     "search": "{replace: DATE}",
-    "replace": "TIMEZONE",
+    "replace": "DATETIME",
     "eval": true
   }
 ]

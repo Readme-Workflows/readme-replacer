@@ -16,4 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: Readme-Workflows/readme-replacer@main
         with:
-          CUSTOM_REPLACER_FILE: "./.github/versionReplacer.json"
+          CUSTOM_REPLACER_FILE: "./.github/changelogReplacer.json"
+          DATE_FORMAT: 'DD-MM-YYYY "UTC"'
+          TEMPLATE_FILE: "./CHANGELOG.md"
+          COMMIT_FILE: "./CHANGELOG.md"

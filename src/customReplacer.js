@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const { TIMEZONE } = require("./config");
+const { DATETIME } = require("./config");
 
 /**
  * Copyright (c) 2021 The Readme-Workflows organisation and Contributors

@@ -4,7 +4,7 @@
 /* eslint-disable no-unused-vars */
 const fs = require("fs");
 
-const { CUSTOM_REPLACER_FILE, TIMEZONE } = require("./config");
+const { CUSTOM_REPLACER_FILE, DATETIME } = require("./config");
 const customReplacer = require("./customReplacer");
 const replacers = require("./replacers.json");
 
