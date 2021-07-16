@@ -8,15 +8,14 @@ jobs:
   replace:
     runs-on: ubuntu-latest
     name: Replace Placeholders in File.
-    
+
     steps:
       - uses: actions/checkout@2.3.4
-      # Please replace {version} with the latest available release.
-      - uses: Readme-Workflows/readme-replacer@{version}
+      - uses: Readme-Workflows/readme-replacer@main
         env:
-          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: { { secrets.GITHUB_TOKEN } }
         with:
           # Those are all default values and only are shown for demonstration
-          TEMPLATE_FILE: './README.md'
-          COMMIT_FILE: './README.md'
-          CUSTOM_REPLACER_FILE: './.github/customReplacer.json'
+          TEMPLATE_FILE: "./README.md"
+          COMMIT_FILE: "./README.md"
+          CUSTOM_REPLACER_FILE: "./.github/customReplacer.json"
