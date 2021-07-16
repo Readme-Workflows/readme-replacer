@@ -26,6 +26,8 @@ jobs:
       - uses: actions/checkout@2.3.4
       # Please replace {version} with the latest available release.
       - uses: Readme-Workflows/readme-replacer@{version}
+        env:
+          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
         with:
           # Those are all default values and only are shown for demonstration
           TEMPLATE_FILE: './TEMPLATE.md'
