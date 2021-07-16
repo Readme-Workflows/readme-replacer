@@ -24,7 +24,6 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      # Please replace {version} with the latest available release.
       - uses: Readme-Workflows/readme-replacer@{version}
         env:
           GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
