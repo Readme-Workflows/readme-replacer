@@ -17,3 +17,4 @@ jobs:
       - uses: Readme-Workflows/readme-replacer@main
         with:
           CUSTOM_REPLACER_FILE: "./.github/customReplacer.json"
+          DATE_FORMAT: 'DD-MM-YYYY "UTC"'
