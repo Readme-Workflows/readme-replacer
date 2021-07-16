@@ -21497,7 +21497,7 @@ const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
 const COMMIT_EMAIL = core.getInput("COMMIT_EMAIL");
 const COMMIT_NAME = core.getInput("COMMIT_NAME");
 
-const TIMEZONE = getDate(
+const DATETIME = getDate(
   core.getInput("DATE_FORMAT"),
   core.getInput("TIMEZONE")
 );
@@ -21510,7 +21510,7 @@ module.exports = {
   COMMIT_MESSAGE,
   COMMIT_EMAIL,
   COMMIT_NAME,
-  TIMEZONE,
+  DATETIME,
 };
 
 
@@ -21520,7 +21520,7 @@ module.exports = {
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // eslint-disable-next-line no-unused-vars
-const { TIMEZONE } = __nccwpck_require__(4570);
+const { DATETIME } = __nccwpck_require__(4570);
 
 /**
  * Copyright (c) 2021 The Readme-Workflows organisation and Contributors
@@ -21672,7 +21672,7 @@ module.exports = (format, timezone) => {
 /* eslint-disable no-unused-vars */
 const fs = __nccwpck_require__(5747);
 
-const { CUSTOM_REPLACER_FILE, TIMEZONE } = __nccwpck_require__(4570);
+const { CUSTOM_REPLACER_FILE, DATETIME } = __nccwpck_require__(4570);
 const customReplacer = __nccwpck_require__(9239);
 const replacers = __nccwpck_require__(3656);
 
@@ -21763,7 +21763,7 @@ module.exports = JSON.parse('{"name":"signale","version":"1.4.0","description":"
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('[{"search":"{replace: DATE}","replace":"TIMEZONE","eval":true}]');
+module.exports = JSON.parse('[{"comment":"Adds date and time in format specified in DATE_FORMAT input in YAML","search":"{replace: DATE}","replace":"DATETIME","eval":true}]');
 
 /***/ }),
 
