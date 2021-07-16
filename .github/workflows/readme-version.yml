@@ -3,6 +3,8 @@ name: Replace placeholders
 on:
   release:
     types: [published]
+    branches:
+      - main
   workflow_dispatch: # Allow manual trigger
 
 jobs:
