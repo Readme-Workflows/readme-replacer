@@ -13,7 +13,7 @@ const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
 const COMMIT_EMAIL = core.getInput("COMMIT_EMAIL");
 const COMMIT_NAME = core.getInput("COMMIT_NAME");
 
-const TIMEZONE = getDate(
+const DATETIME = getDate(
   core.getInput("DATE_FORMAT"),
   core.getInput("TIMEZONE")
 );
@@ -26,5 +26,5 @@ module.exports = {
   COMMIT_MESSAGE,
   COMMIT_EMAIL,
   COMMIT_NAME,
-  TIMEZONE,
+  DATETIME,
 };
