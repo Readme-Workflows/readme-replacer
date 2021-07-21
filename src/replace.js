@@ -33,7 +33,7 @@ module.exports = (template) => {
     };
   }
 
-  if (customData.forEach && customDataExists) {
+  if (customData && customData.forEach && customDataExists) {
     customData.forEach((data) => {
       let tempReplace = customReplacer(template, data);
       if (tempReplace.result) {
