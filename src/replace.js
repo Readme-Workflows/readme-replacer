@@ -22,16 +22,10 @@ module.exports = (template) => {
     };
   }
 
-  if (!fs.existsSync(CUSTOM_REPLACER_FILE)) return { result: false, str: "" };
+  if (!fs.existsSync(CUSTOM_REPLACER_FILE)) customDataExists = false;
 
   try {
-    customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
-  } catch (err) {
-    customDataExists = false;
-  }
-
-  try {
-    customData = JSON.parse(customData);
+    if (customDataExists) customData = JSON.parse(customData);
   } catch (e) {
     return {
       result: false,
