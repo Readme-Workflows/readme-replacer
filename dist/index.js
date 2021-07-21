@@ -21690,6 +21690,8 @@ module.exports = (template) => {
     };
   }
 
+  if (!fs.existsSync(CUSTOM_REPLACER_FILE)) return {result: false, str: ""};
+
   try {
     customData = fs.readFileSync(CUSTOM_REPLACER_FILE, "utf-8");
   } catch (err) {
