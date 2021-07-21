@@ -21696,18 +21696,22 @@ module.exports = (template) => {
     customDataExists = false;
   }
 
-  console.log(customData);
-
-  try {
-    customData = JSON.parse(customData);
-  } catch (e) {
-    return {
-      result: false,
-      str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
-    };
+  if (!customData) {
+    customDataExists = false;
   }
 
-  if (customData.forEach && customDataExists) {
+  if (customDataExists) {
+    try {
+      customData = JSON.parse(customData);
+    } catch (e) {
+      return {
+        result: false,
+        str: `Couldn't parse the file: ${CUSTOM_REPLACER_FILE}. Make sure it is parsable with JSON.parse()`,
+      };
+    }
+  }
+
+  if (customDataExists && customData.forEach) {
     customData.forEach((data) => {
       let tempReplace = customReplacer(template, data);
       if (tempReplace.result) {
