@@ -28,6 +28,8 @@ module.exports = (template) => {
     customDataExists = false;
   }
 
+  console.log(customData);
+
   try {
     customData = JSON.parse(customData);
   } catch (e) {
