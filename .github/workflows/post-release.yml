@@ -17,7 +17,7 @@ jobs:
       - uses: Readme-Workflows/readme-replacer@main
         with:
           CUSTOM_REPLACER_FILE: "./.github/changelogReplacer.json"
-          DATE_FORMAT: 'dd-mm-yyyy "UTC"'
+          DATE_FORMAT: "dd-mm-yyyy"
           TEMPLATE_FILE: "./CHANGELOG.md"
           COMMIT_FILE: "./CHANGELOG.md"
 
