@@ -1,6 +1,6 @@
-# Changelog v0
+# Changelog v1
 
-The Changelog of the major version 0 of Readme-Replacer GitHub Action.
+The Changelog of the major version 1 of Readme-Replacer GitHub Action.
 
 Note that the displayed date is in the format `dd-mm-yyyy`
 
