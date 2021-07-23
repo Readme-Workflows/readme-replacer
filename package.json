@@ -1,6 +1,6 @@
 {
   "name": "readme-replacer",
-  "version": "1.0.0",
+  "version": "0.1.0-rc3",
   "description": "Replace data from template repository with dynamic data",
   "main": "src/app.js",
   "scripts": {
