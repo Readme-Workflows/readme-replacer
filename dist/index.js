@@ -21594,6 +21594,7 @@ const exec = (cmd, args = [], callAPI) =>
       if (code !== 0 && !stdout.includes("nothing to commit")) {
         let err = new Error(`Invalid status code: ${code}`);
         err.code = code;
+        console.log(err)
         if (callAPI) {
           apiRequest({ ...reqParams, status: "failure" }, () => reject(err));
         } else {
