@@ -7,7 +7,7 @@ Note that the displayed date is in the format `dd-mm-yyyy`
 [Older changelogs](#older-changelogs)
 
 ## [v1.0.1]
-> **Released:** `{TBA}`
+> **Released:** `23-07-2021`
 
 - Fix some bugs and improve error logging
 
