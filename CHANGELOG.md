@@ -7,7 +7,7 @@ Note that the displayed date is in the format `dd-mm-yyyy`
 [Older changelogs](#older-changelogs)
 
 ## [v0.1.0]
-> **Released:** `{TBA}`
+> **Released:** `DD-03-YYYY UTC`
 
 ### Initial development of Readme Replacer
 
