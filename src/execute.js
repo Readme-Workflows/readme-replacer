@@ -31,7 +31,7 @@ const exec = (cmd, args = [], callAPI) =>
       stdout = data;
     });
     app.on("close", (code) => {
-      if (code !== 0 && !stdout.includes("nothing to commit") && code !== 128) {
+      if (code !== 0 && !stdout.includes("nothing to commit")) {
         let err = new Error(`Invalid status code: ${code}`);
         err.code = code;
         console.log(err);
