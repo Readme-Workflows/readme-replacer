@@ -24,7 +24,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - uses: Readme-Workflows/readme-replacer@v0.1.0-rc4
+      - uses: Readme-Workflows/readme-replacer@v1.0.1
         env:
           GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
         with:
