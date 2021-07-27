@@ -64,7 +64,7 @@
     "search": "{octicons/prDrafted}",
     "replace": "![image](https://cdn.jsdelivr.net/gh/Readme-Workflows/Readme-Icons@main/icons/octicons/PullRequestDrafted.svg)",
     "eval": false
-  }
+  },
   {
     "search": "{octicons/comment}",
     "replace": "![image](https://cdn.jsdelivr.net/gh/Readme-Workflows/Readme-Icons@main/icons/octicons/Comment.svg)",
