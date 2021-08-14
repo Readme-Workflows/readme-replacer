@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: Readme-Workflows/readme-replacer@v1.0.1
         env:
-          GITHUB_TOKEN: {{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # Those are all default values and only are shown for demonstration
           TEMPLATE_FILE: './TEMPLATE.md'
